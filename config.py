@@ -1,0 +1,3 @@
+PRICE_LIMIT = 550
+ENERGY_CLASSIFICATION = ["A", "B", "C", "D"]
+DEBUG = False
