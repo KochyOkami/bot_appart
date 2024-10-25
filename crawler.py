@@ -115,8 +115,7 @@ def get_seLoger_data_from_page(page_id=1) -> dict | None:
 
     # get the page
     response = requests.get(
-        f"https://www.seloger.com/immobilier/locations/immo-tours-37/bien-appartement/?LISTING-LISTpg={
-            page_id}",
+        "https://www.seloger.com/immobilier/locations/immo-tours-37/bien-appartement/?LISTING-LISTpg="+page_id,
         cookies=cookies,
         headers=headers,
     )
@@ -241,8 +240,7 @@ def get_seLoger_ads(connection):
                         new_ad["agencyRentalFee"] = round(other_data["props"]["pageProps"]["listingData"]["listing"]["listingDetail"]["listingPrice"]["alur"]["honorairesLocataire"])
 
                         new_ads.append(new_ad)
-                        insert_new_rent_ad(connection, new_ad["id"], new_ad["title"], new_ad["description"], new_ad["price"], new_ad["safetyDeposit"], new_ad[
-                            "agencyRentalFee"], new_ad["surfaceArea"], new_ad["roomsQuantity"], new_ad["energyClassification"], new_ad["thumbnailUrl"], new_ad["url"])
+                        insert_new_rent_ad(connection, new_ad["id"], new_ad["title"], new_ad["description"], new_ad["price"], new_ad["safetyDeposit"], new_ad["agencyRentalFee"], new_ad["surfaceArea"], new_ad["roomsQuantity"], new_ad["energyClassification"], new_ad["thumbnailUrl"], new_ad["url"])
                     else:
                         if DEBUG:
                             print(f"Annonce {new_ad['url']} contient des mots interdits")

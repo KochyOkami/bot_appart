@@ -1,3 +1,5 @@
+CREATE USER 'crawler'@'host' IDENTIFIED WITH authentication_plugin BY '4Df4fe4QlgR4zZCS';
+
 CREATE DATABASE rent_crawler;
 
 USE rent_crawler;
